@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Data (ignore everything heavy)
+data/
+checkpoints/
+
+# Large file types
+*.h5
+*.gz
+*.pt
+*.npy
+*.bak
+
+# Optional: ignore generated outputs
+analysis/
+figures/

@@ -1,0 +1,23 @@
+=== Chr 9 diagnostics summary ===
+
+Disease-only chr 9 genes analyzed: 23
+
+TEST 1: Thy1 correlation
+  Genes with |r(Thy1)| >= 0.7: 0/23  (0.0%)
+  Median |r(Thy1)|: 0.095
+  Max  |r(Thy1)|: 0.296
+
+TEST 2: Receptive-field position distance to Thy1
+  <=7 (conv-1 RF)               7
+  8-50 (conv-2)                 8
+  51-150 (conv-3 to deep)       8
+  151-500 (beyond RF)           0
+  >500 (no RF)                  0
+
+TEST 3: Per-dataset SHAP attribution
+  Mean fraction from 3xTgAD: 0.507
+
+INTERPRETATION:
+  If TEST 1 shows most genes correlate with Thy1: CNN sees redundant Thy1 copies
+  If TEST 2 shows most genes within ~150 positions of Thy1: convolutional receptive field artifact
+  If TEST 3 shows skew to one dataset: transgene-specific signal, not generic AD biology
